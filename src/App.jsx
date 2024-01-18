@@ -1,3 +1,4 @@
+import { Footer } from "./components/Footer";
 import { Navbar } from "./components/Navbar";
 import { WEB_ROUTES } from "./config";
 import { Home } from "./pages/Home";
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path={WEB_ROUTES.home} element={<Home />} />
       </Routes>
+      <Footer />
     </>
   );
 }

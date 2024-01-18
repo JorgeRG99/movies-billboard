@@ -7,7 +7,7 @@ export function Home() {
     <section className="bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]">
       <HeroSection />
       <FeaturesSection />
-      <section className="w-full flex justify-center items-center py-10">
+      <section className="w-full flex justify-center items-center pt-20 pb-40">
         <RecommendedMovies />
       </section>
     </section>
