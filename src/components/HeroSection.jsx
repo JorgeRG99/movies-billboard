@@ -22,7 +22,7 @@ export function HeroSection() {
           className="mt-4 inline-flex h-10 items-center justify-center rounded-md bg-primary-violet px-8 text-sm font-medium text-white shadow hover:opacity-70 duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
           href="#"
         >
-          Explore More
+          Explore premieres
         </Link>
       </div>
     </section>
