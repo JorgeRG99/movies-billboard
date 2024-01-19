@@ -1,7 +1,12 @@
-export function BillboardSearchbar() {
+import debounce from "just-debounce-it";
+
+export function BillboardSearchbar({ setFilter }) {
+  const handleChangeDebounced = debounce((e) => setFilter(e.target.value), 300);
+
   return (
     <div className="flex items-center gap-4 mb-12 w-full">
       <input
+        onChange={handleChangeDebounced}
         type="text"
         placeholder="Search a certain film schedule"
         className="border-2 border-white rounded-lg h-10 placeholder-gray-400 bg-transparent w-[90%] px-4 text-white"

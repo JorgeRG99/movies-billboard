@@ -1,4 +1,4 @@
-import { MOVIE, MOVIE_BILLBOARD, RECOMMENDED_MOVIES } from "../config"
+import { MOVIE, RECOMMENDED_MOVIES, API_HOSTNAME } from "../config"
 
 export const getRecommendedMovies = async () => {
     try {
@@ -13,9 +13,11 @@ export const getRecommendedMovies = async () => {
     }
 }
 
-export const getBillboard = async (page) => {
+export const getBillboard = async (page, filter) => {
+    const MOVIES_BILLBOARD_ENDPOINT = filter ? API_HOSTNAME + `&s=${filter}&page=${page}` : API_HOSTNAME + `&s=Random&page=${page}`
+
     try {
-        const response = await fetch(MOVIE_BILLBOARD + page)
+        const response = await fetch(MOVIES_BILLBOARD_ENDPOINT)
         if (!response.ok) return "Error obteniendo cartelera de peliculas, intentelo de nuevo más tarde"
 
         return response.json()
