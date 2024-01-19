@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { BillboardSearchbar } from "../components/BillboardSearchbar";
 import BillboardSkeleton from "../components/BillboardSkeleton";
 import { MovieCard } from "../components/MovieCard";
@@ -14,12 +15,14 @@ export function Billboard() {
       ) : (
         <ul className="grid grid-cols-billboard gap-8">
           {billboardList?.map((movie) => (
-            <li
-              key={movie.imdbID}
-              className="rounded-xl w-full h-auto flex items-center justify-center"
-            >
-              <MovieCard movie={movie} />
-            </li>
+            <Link key={movie.imdbID} to={`/movie/${movie.imdbID}`}>
+              <li
+                key={movie.imdbID}
+                className="rounded-xl w-full h-auto flex items-center justify-center"
+              >
+                <MovieCard movie={movie} />
+              </li>
+            </Link>
           ))}
         </ul>
       )}

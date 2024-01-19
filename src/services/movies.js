@@ -1,4 +1,4 @@
-import { MOVIE_BILLBOARD, RECOMMENDED_MOVIES } from "../config"
+import { MOVIE, MOVIE_BILLBOARD, RECOMMENDED_MOVIES } from "../config"
 
 export const getRecommendedMovies = async () => {
     try {
@@ -21,5 +21,15 @@ export const getBillboard = async (page) => {
         return response.json()
     } catch (error) {
         console.log(`Error during movies fetch ${error.message}`);
+    }
+}
+export const getMovie = async (movieImdbId) => {
+    try {
+        const response = await fetch(MOVIE + movieImdbId)
+        if (!response.ok) return "Error obteniendo informacion de la pelicula, intentelo de nuevo más tarde"
+
+        return response.json()
+    } catch (error) {
+        console.log(`Error during movie info fetch ${error.message}`);
     }
 }

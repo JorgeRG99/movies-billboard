@@ -7,13 +7,14 @@ const API_HOSTNAME = ` http://www.omdbapi.com/?apikey=${API_KEY}&`
 // API ROUTES
 export const RECOMMENDED_MOVIES = `${API_HOSTNAME}s=Random`
 export const MOVIE_BILLBOARD = `${API_HOSTNAME}s=Random&page=`
+export const MOVIE = `${API_HOSTNAME}plot=full&i=`
 
 
 // WEB ROUTES
 export const WEB_ROUTES = {
     home: '/',
     billboard: '/billboard',
-    movie: '/:movieId'
+    movie: '/movie/:movieImdbId'
 }
 
 // FEATURES CONTENT

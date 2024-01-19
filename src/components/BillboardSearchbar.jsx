@@ -1,5 +1,3 @@
-import { Input } from "../shadcn/components/input";
-
 export function BillboardSearchbar() {
   return (
     <div className="flex items-center gap-4 mb-12 w-full">

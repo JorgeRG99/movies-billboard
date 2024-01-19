@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useRecommendedMovies } from "../hooks/useRecommendedMovies";
 import { Card, CardContent } from "../shadcn/components/card";
 import {
@@ -24,19 +25,18 @@ export function RecommendedMovies() {
       >
         <CarouselContent>
           {recommendedMoviesList?.map((movie) => (
-            <CarouselItem
-              key={movie.imdbID}
-              className="md:basis-1/2 lg:basis-1/3 h-[22em]"
-            >
-              <Card className="h-full border-0">
-                <CardContent className="flex aspect-square items-start justify-center p-0 h-full w-full overflow-hidden rounded-xl">
-                  <div
-                    className="h-full w-full bg-cover bg-no-repeat"
-                    style={{ backgroundImage: `url(${movie.Poster})` }}
-                  />
-                </CardContent>
-              </Card>
-            </CarouselItem>
+            <Link key={movie.imdbID} to={`/movie/${movie.imdbID}`}>
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3 h-[22em]">
+                <Card className="h-full border-0">
+                  <CardContent className="flex aspect-square items-start justify-center p-0 h-full w-full overflow-hidden rounded-xl">
+                    <div
+                      className="h-full w-full bg-cover bg-no-repeat"
+                      style={{ backgroundImage: `url(${movie.Poster})` }}
+                    />
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+            </Link>
           ))}
         </CarouselContent>
         <CarouselPrevious className="bg-primary-violet border-0 transition hover:opacity-40 duration-300 ease-in-out" />
