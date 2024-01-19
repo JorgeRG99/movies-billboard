@@ -22,7 +22,7 @@ export function NoFavorite() {
             />
           </svg>
         </TooltipTrigger>
-        <TooltipContent>Add to favourites</TooltipContent>
+        <TooltipContent>Add to favorites</TooltipContent>
       </Tooltip>
     </TooltipProvider>
   );

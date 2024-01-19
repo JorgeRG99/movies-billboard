@@ -8,8 +8,6 @@ import { NoTitles } from "../components/NoTitles";
 export function Billboard() {
   const { billboardList, isLoading, setFilter } = useBillboard();
 
-  console.log(billboardList);
-
   return (
     <section className="pb-40 pt-28 px-28 bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]">
       <BillboardSearchbar setFilter={setFilter} />
