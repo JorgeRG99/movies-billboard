@@ -6,10 +6,11 @@ import { Favorite } from "../components/Icons/Favorite";
 import { OpenBuyTicketDialog } from "../components/OpenBuyTicketDialog";
 import { BuyTicketDialog } from "../components/BuyTicketDialog";
 import { useState } from "react";
+import { MovieSkeleton } from "../components/MovieSkeleton";
 
 export default function Movie() {
   const { movieImdbId } = useParams();
-  const { movieInfo } = useMovieInfo(movieImdbId);
+  const { movieInfo, isLoading } = useMovieInfo(movieImdbId);
   const { favoritesList, addToFavorites, removeFromFavorites } = useFavorites();
   const isOnFavorites = favoritesList.includes(movieImdbId);
   const [open, setOpen] = useState(false);
@@ -26,7 +27,7 @@ export default function Movie() {
 
   return (
     <>
-      {movieInfo && (
+      {!isLoading ? (
         <>
           <BuyTicketDialog
             open={open}
@@ -104,6 +105,8 @@ export default function Movie() {
             </div>
           </section>
         </>
+      ) : (
+        <MovieSkeleton />
       )}
     </>
   );
