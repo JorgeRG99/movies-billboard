@@ -25,14 +25,14 @@ export function RecommendedMovies() {
         <CarouselContent>
           {recommendedMoviesList?.map((movie) => (
             <CarouselItem
-              key={movie["#IMDB_ID"]}
+              key={movie.imdbID}
               className="md:basis-1/2 lg:basis-1/3 h-[22em]"
             >
               <Card className="h-full border-0">
                 <CardContent className="flex aspect-square items-start justify-center p-0 h-full w-full overflow-hidden rounded-xl">
-                  <img
-                    src={movie["#IMG_POSTER"]}
-                    alt={`${movie["#AKA"]} movie poster`}
+                  <div
+                    className="h-full w-full bg-cover bg-no-repeat"
+                    style={{ backgroundImage: `url(${movie.Poster})` }}
                   />
                 </CardContent>
               </Card>

@@ -8,7 +8,7 @@ export const useRecommendedMovies = () => {
         const fetchReccomendedMoviesList = async () => {
             const response = await getRecommendedMovies()
 
-            setRecommendedMoviesList(response.description)
+            setRecommendedMoviesList(response.Search)
         }
 
         fetchReccomendedMoviesList()

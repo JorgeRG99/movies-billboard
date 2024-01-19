@@ -1,13 +1,19 @@
-// HOST
-export const API_HOSTNAME = 'https://search.imdbot.workers.dev'
+// API KEY
+const API_KEY = import.meta.env.VITE_API_KEY
 
-// ENDPOINTS
-export const RECOMMENDED_MOVIES = `${API_HOSTNAME}/?q=Random`
+// HOST
+const API_HOSTNAME = ` http://www.omdbapi.com/?apikey=${API_KEY}&`
+
+// API ROUTES
+export const RECOMMENDED_MOVIES = `${API_HOSTNAME}s=Random`
+export const MOVIE_BILLBOARD = `${API_HOSTNAME}s=Random&page=`
 
 
 // WEB ROUTES
 export const WEB_ROUTES = {
-    home: '/'
+    home: '/',
+    billboard: '/billboard',
+    movie: '/:movieId'
 }
 
 // FEATURES CONTENT

@@ -17,6 +17,12 @@ module.exports = {
       },
     },
     extend: {
+      boxShadow: {
+        movie: '0px 0px 0px 30px #000',
+      },
+      gridTemplateColumns: {
+        billboard: "repeat(auto-fit, minmax(250px, 1fr))",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
