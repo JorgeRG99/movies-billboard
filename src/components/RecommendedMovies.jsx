@@ -26,7 +26,7 @@ export function RecommendedMovies() {
         <CarouselContent>
           {recommendedMoviesList?.map((movie) => (
             <Link key={movie.imdbID} to={`/movie/${movie.imdbID}`}>
-              <CarouselItem className="md:basis-1/2 lg:basis-1/3 h-[22em]">
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3 h-[30em] w-[20em]">
                 <Card className="h-full border-0">
                   <CardContent className="flex aspect-square items-start justify-center p-0 h-full w-full overflow-hidden rounded-xl">
                     <div
