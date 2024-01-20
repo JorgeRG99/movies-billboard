@@ -2,7 +2,7 @@
 const API_KEY = import.meta.env.VITE_API_KEY
 
 // HOST
-export const API_HOSTNAME = ` http://www.omdbapi.com/?apikey=${API_KEY}&`
+export const API_HOSTNAME = `http://www.omdbapi.com/?apikey=${API_KEY}&`
 
 // API ROUTES
 export const RECOMMENDED_MOVIES = `${API_HOSTNAME}s=Random`
