@@ -18,7 +18,7 @@ export function Billboard() {
           {billboardList.length > 0 ? (
             <ul className="grid grid-cols-billboard gap-8">
               {billboardList?.map((movie) => (
-                <Link key={movie.imdbID} to={`/movie/${movie.imdbID}`}>
+                <Link key={movie.imdbID} to={`/design/movie/${movie.imdbID}`}>
                   <li
                     key={movie.imdbID}
                     className="rounded-xl w-full h-auto flex items-center justify-center"

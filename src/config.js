@@ -2,7 +2,7 @@
 const API_KEY = import.meta.env.VITE_API_KEY
 
 // HOST
-export const API_HOSTNAME = `http://www.omdbapi.com/?apikey=${API_KEY}&`
+export const API_HOSTNAME = `https://www.omdbapi.com/?apikey=${API_KEY}&`
 
 // API ROUTES
 export const RECOMMENDED_MOVIES = `${API_HOSTNAME}s=Random`
@@ -11,9 +11,9 @@ export const MOVIE = `${API_HOSTNAME}plot=full&i=`
 
 // WEB ROUTES
 export const WEB_ROUTES = {
-    home: '/',
-    billboard: '/billboard',
-    movie: '/movie/:movieImdbId'
+    home: '/design',
+    billboard: '/design/billboard',
+    movie: '/design/movie/:movieImdbId'
 }
 
 // FEATURES CONTENT
