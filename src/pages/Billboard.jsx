@@ -4,9 +4,11 @@ import BillboardSkeleton from "../components/BillboardSkeleton";
 import { MovieCard } from "../components/MovieCard";
 import { useBillboard } from "../hooks/useBillboard";
 import { NoTitles } from "../components/NoTitles";
+import { useSelector } from "react-redux";
 
 export function Billboard() {
-  const { billboardList, isLoading, setFilter } = useBillboard();
+  const { setFilter } = useBillboard();
+  const { films, isLoading } = useSelector((state) => state.films);
 
   return (
     <section className="pb-40 pt-28 px-28 bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]">
@@ -15,9 +17,9 @@ export function Billboard() {
         <BillboardSkeleton />
       ) : (
         <>
-          {billboardList.length > 0 ? (
+          {films.length > 0 ? (
             <ul className="grid grid-cols-billboard gap-8">
-              {billboardList?.map((movie) => (
+              {films?.map((movie) => (
                 <Link key={movie.imdbID} to={`/design/movie/${movie.imdbID}`}>
                   <li
                     key={movie.imdbID}
