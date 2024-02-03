@@ -11,13 +11,29 @@ import {
 } from "../shadcn/components/alert-dialog";
 import { Plus } from "./Icons/Plus";
 import Minus from "./Icons/Minus";
+import { useDispatch } from "react-redux";
+import { buyTicket } from "../slices/tickets/ticketsThunks";
 
 export function BuyTicketDialog({ open = false, onOpenChange, movieInfo }) {
   const [quantity, setQuantity] = useState(1);
+  const [hour, setHour] = useState("12:00");
+  const [seat, setSeat] = useState("1");
+  const dispatch = useDispatch();
 
   const incrementValue = () => setQuantity((prevState) => prevState + 1);
   const decrementValue = () =>
     setQuantity((prevState) => (prevState !== 0 ? prevState - 1 : prevState));
+
+  const handleBuy = () => {
+    dispatch(
+      buyTicket({
+        film: movieInfo.Title,
+        quantity,
+        hour,
+        seat,
+      })
+    );
+  };
 
   return (
     <AlertDialog open={open} onOpenChange={onOpenChange}>
@@ -62,6 +78,7 @@ export function BuyTicketDialog({ open = false, onOpenChange, movieInfo }) {
                 <select
                   name="schedule"
                   className="border-2 border-gray-500 w-full p-1 rounded-md"
+                  onChange={(e) => setHour(e.target.value)}
                 >
                   <option value="12:00">12:00</option>
                   <option value="14:00">14:00</option>
@@ -76,6 +93,7 @@ export function BuyTicketDialog({ open = false, onOpenChange, movieInfo }) {
                 <select
                   name="schedule"
                   className="border-2 border-gray-500 w-full p-1 rounded-md"
+                  onChange={(e) => setSeat(e.target.value)}
                 >
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -107,7 +125,7 @@ export function BuyTicketDialog({ open = false, onOpenChange, movieInfo }) {
             Total: <span className="font-normal">{quantity * 9}$</span>
           </p>
           <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction>Continue</AlertDialogAction>
+          <AlertDialogAction onClick={handleBuy}>Continue</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

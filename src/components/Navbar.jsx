@@ -14,12 +14,20 @@ export function Navbar() {
         </p>
       </div>
 
-      <Link
-        to={WEB_ROUTES.billboard}
-        className="hover:line-through text-primary-violet"
-      >
-        BILLBOARD
-      </Link>
+      <div className="space-x-6">
+        <Link
+          to={WEB_ROUTES.billboard}
+          className="hover:line-through text-primary-violet"
+        >
+          BILLBOARD
+        </Link>
+        <Link
+          to={WEB_ROUTES.yourTickets}
+          className="hover:line-through text-primary-violet"
+        >
+          YOUR TICKETS
+        </Link>
+      </div>
     </nav>
   );
 }

@@ -13,7 +13,8 @@ export const MOVIE = `${API_HOSTNAME}plot=full&i=`
 export const WEB_ROUTES = {
     home: '/design',
     billboard: '/design/billboard',
-    movie: '/design/movie/:movieImdbId'
+    movie: '/design/movie/:movieImdbId',
+    yourTickets: '/design/tickets'
 }
 
 // FEATURES CONTENT
