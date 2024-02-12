@@ -8,7 +8,7 @@ export function HeroSection() {
         alt="Movie Background"
         className="absolute inset-0 object-cover w-full h-full"
         height="800"
-        src="/design/hero-section.webp"
+        src="/hero-section.webp"
         width="1920"
       />
       <div className="relative h-full px-4 md:px-6 flex flex-col justify-center items-start bg-gradient-to-r from-black/60 to-transparent">

@@ -12,14 +12,17 @@ export default function Movie() {
   const { movieImdbId } = useParams();
   const { movieInfo, isLoading } = useMovieInfo(movieImdbId);
   const { favoritesList, addToFavorites, removeFromFavorites } = useFavorites();
-  const isOnFavorites = favoritesList.includes(movieImdbId);
+  const isOnFavorites = favoritesList.some(
+    (movie) => movie.imdbID === movieInfo?.imdbID
+  );
   const [open, setOpen] = useState(false);
 
   const toggleFavorite = () => {
+    console.log(isOnFavorites);
     if (isOnFavorites) {
-      removeFromFavorites(movieImdbId);
+      removeFromFavorites(movieInfo);
     } else {
-      addToFavorites(movieImdbId);
+      addToFavorites(movieInfo);
     }
   };
 

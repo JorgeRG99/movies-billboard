@@ -15,7 +15,7 @@ export default function Tickets() {
   const { tickets } = useSelector((state) => state.tickets);
 
   return (
-    <section className="flex flex-col lg:flex-row justify-evenly items-center min-h-[82.7vh] gap-20 px-80 py-40 bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] text-white">
+    <section className="flex flex-col lg:flex-row justify-evenly items-center flex-1 overflow-auto gap-20 px-80 py-40 bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] text-white">
       {tickets.length > 0 ? (
         <Table>
           <TableCaption>A list of your tickets.</TableCaption>

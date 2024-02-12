@@ -9,7 +9,7 @@ export function Navbar() {
         <Link to={WEB_ROUTES.home}>
           <MainLogo />
         </Link>
-        <p className="font-semibold font-poppins text-[1.3em]">
+        <p className="font-semibold font-poppins text-[1.3em] hidden sm:block">
           MOVIE BILLBOARD
         </p>
       </div>
@@ -26,6 +26,12 @@ export function Navbar() {
           className="hover:line-through text-primary-violet"
         >
           YOUR TICKETS
+        </Link>
+        <Link
+          to={WEB_ROUTES.favorites}
+          className="hover:line-through text-primary-violet"
+        >
+          FAVORITES
         </Link>
       </div>
     </nav>

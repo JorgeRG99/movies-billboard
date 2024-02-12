@@ -11,10 +11,11 @@ export const MOVIE = `${API_HOSTNAME}plot=full&i=`
 
 // WEB ROUTES
 export const WEB_ROUTES = {
-    home: '/design',
-    billboard: '/design/billboard',
-    movie: '/design/movie/:movieImdbId',
-    yourTickets: '/design/tickets'
+    home: '/',
+    billboard: '/billboard',
+    movie: '/movie/:movieImdbId',
+    yourTickets: '/tickets',
+    favorites: '/favorites',
 }
 
 // FEATURES CONTENT

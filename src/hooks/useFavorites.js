@@ -9,14 +9,14 @@ export const useFavorites = () => {
         if (localFavorites) setFavoritesList(JSON.parse(localFavorites))
     }, [])
 
-    const addToFavorites = (movieImbdId) => {
-        const newFavoritesList = [...favoritesList, movieImbdId]
+    const addToFavorites = (movie) => {
+        const newFavoritesList = [...favoritesList, movie]
         setFavoritesList(newFavoritesList)
         localStorage.setItem("favorites", JSON.stringify(newFavoritesList))
     }
 
-    const removeFromFavorites = (movieImbdId) => {
-        const newFavoritesList = favoritesList.filter((id) => id !== movieImbdId);
+    const removeFromFavorites = (movieToRemove) => {
+        const newFavoritesList = favoritesList.filter((movie) => movie.imdbID !== movieToRemove.imdbID);
         setFavoritesList(newFavoritesList);
         localStorage.setItem("favorites", JSON.stringify(newFavoritesList));
     };
